@@ -1,21 +1,48 @@
 
-.hotels .hotel-title {
+.Google-Feed .GoogleFeed-title {
     height:20px;
     width:500px;
 
 }
 
-    .hotels .images-Url {
-        height:200px;
-        width:200px;
+    .Google-Feed .GoogleFeed-Url {
+        
+        color:#0026ff;
+
 
     }
 
-    .hotels{
+    .Google-Feed{
 
     	border:solid #ddd 1px;
+        background-color: #FAEFD2;
+
     }
     .car {
-
+        background-color: #FAEFD2;
     	border:solid #ddd 1px;
     }
+
+.rssFeed-Header
+{
+
+    font-family:'Comic Sans MS','Times New Roman',Arial,Verdana;
+    font-size:1.2em;
+    background-color:#5e7f98;
+    color:#fff;
+    padding-left:5px;
+
+}
+.rssFeed-Welcome
+{
+    background-color:#395061;
+    color:#8faebb;
+    font-size:1em;
+    padding-left:5px;
+
+}
+
+.dropdown-Url {
+
+    margin-left: 900px;
+}

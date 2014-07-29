@@ -1,6 +1,5 @@
 var  ajaxRequest;
 
-
 		function loadXMLDoc(url,functionCall)
 		{
 			var xmlhttp;
@@ -25,7 +24,7 @@ var  ajaxRequest;
 		};
 
 	function selectedValue(){
-
+					
 			var e = document.getElementById("url");
 			var url = e.options[e.selectedIndex].value;
 			selectedIndex= document.getElementById("url").selectedIndex;
@@ -41,11 +40,13 @@ function responseFunction(response)
  	var i = 0;
 
  	if(selectedIndex==1){
- 		while(jsonobjList != undefined){
 
- 			var  title = jsonobjList.deals[i].title;
- 			var  url = jsonobjList.deals[i].imageUrl;
-			displayHotel(title, url);
+ 		var thefeeds=jsonobjList.responseData.feed.entries
+ 		while(i<thefeeds.length){
+
+ 			var  url = thefeeds[i].link;
+ 			var  title = thefeeds[i].title;
+			displayGoogleFeed(title, url);
 			i++;
  		}
  	}else if(selectedIndex==2)
@@ -64,9 +65,9 @@ function responseFunction(response)
  	
 }
 
-function getHotel(title, imageUrl)
+function getGoogleFeed(title, imageUrl)
 {
-	var template = "<div class='hotels' ><h3 class='hotel-title'>" + title + "</h3><img class = 'images-Url' src=" + imageUrl +" alt=\"couldn't load the image\"></div>";
+	var template = "<div class='Google-Feed' ><h4 class='GoogleFeed-title'>" + title + "</h4><h5 class='GoogleFeed-Url'>" + imageUrl + "</h5></div>";
 	return template;
 }
 
@@ -78,13 +79,13 @@ function getCar(catagoriesValue ,referenceidValue)
 
 
 
-function displayHotel(imgTitle, imgURL)
+function displayGoogleFeed(imgTitle, imgURL)
 {
 	
 		var displayHtml = document.getElementById('displayHotel');
-		var imageTitle = imgTitle;
-		var imageUrl = imgURL;
-		displayHtml.innerHTML += getHotel(imageTitle, imageUrl);
+		var title = imgTitle;
+		var Url = imgURL;
+		displayHtml.innerHTML += getGoogleFeed(title, Url);
 
 }
 function displayCar(catagories,referenceid)
