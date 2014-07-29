@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>AJAX RSS Feed</title>
+    <link href= "htmlCss.css" rel="StyleSheet" />
+    
+</head>
+<body  >
+
+<label id="selectUrl" > Select URL : </label>
+<select onchange="" id="url">
+	<option  > Select URL</option>
+	<option value = "http://dev-mystique.tavisca.com/api/deals/all?token=p0knefax2drdgigftajt4kqn&$filter=Type eq 'hotel'" > Hotel</option>
+	<option value = "http://dev-mystique.tavisca.com/api/Car/categories?token=p0knefax2drdgigftajt4kqn&$filter=Type eq 'car'" > Car</option>
+	
+</select>
+<button onclick="selectedValue()" id ="url">GO!</button>
+<button onclick="refreshPage()" id ="refresh">Refresh</button>
+<br/>
+<div id ="displayHotel" src=""></div>
+<script type="text/javascript" src="htmlScript.js">
+
+</script>
+</body >
+</html>

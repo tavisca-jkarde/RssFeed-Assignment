@@ -1,0 +1,21 @@
+
+.hotels .hotel-title {
+    height:20px;
+    width:500px;
+
+}
+
+    .hotels .images-Url {
+        height:200px;
+        width:200px;
+
+    }
+
+    .hotels{
+
+    	border:solid #ddd 1px;
+    }
+    .car {
+
+    	border:solid #ddd 1px;
+    }
