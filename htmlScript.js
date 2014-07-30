@@ -67,33 +67,62 @@ function responseFunction(response)
 
 function getGoogleFeed(title, imageUrl)
 {
-	var template = "<div class='Google-Feed' ><h4 class='GoogleFeed-title'>" + title + "</h4><h5 class='GoogleFeed-Url'>" + imageUrl + "</h5></div>";
-	return template;
+    var new_div = document.createElement("div");
+    new_div.className = 'google-feed';
+
+    var sub_childone = document.createElement("h4");
+    sub_childone.className = 'googlefeed-title';
+    var new_content = document.createTextNode(title);
+    sub_childone.appendChild(new_content);
+    new_div.appendChild(sub_childone);
+
+    var sub_childtwo = document.createElement("h5");
+    sub_childtwo.className = 'googlefeed-url';
+    var new_content_url = document.createTextNode(imageUrl);
+    sub_childtwo.appendChild(new_content_url);
+
+    new_div.appendChild(sub_childtwo);
+    return new_div;
+
 }
 
 function getCar(catagoriesValue ,referenceidValue)
 {
-	var template = "<div class='car'><h4 class='car-catagories'>" + catagoriesValue + " </h4><h5 class='car-Referecne'>" + referenceidValue + "</h5></div>";
-	return template;
+    var new_div = document.createElement("div");
+    new_div.className = 'car';
+
+    var sub_childone = document.createElement("h4");
+    sub_childone.className = 'car-catagories';
+    var new_content = document.createTextNode(catagoriesValue);
+    sub_childone.appendChild(new_content);
+    new_div.appendChild(sub_childone);
+
+    var sub_childtwo = document.createElement("h5");
+    sub_childtwo.className = 'car-Referecne';
+    var new_content_url = document.createTextNode(referenceidValue);
+    sub_childtwo.appendChild(new_content_url);
+
+    new_div.appendChild(sub_childtwo);
+    return new_div;
 }
 
 
 
 function displayGoogleFeed(imgTitle, imgURL)
 {
-	
 		var displayHtml = document.getElementById('displayHotel');
 		var title = imgTitle;
 		var Url = imgURL;
-		displayHtml.innerHTML += getGoogleFeed(title, Url);
 
+		displayHtml.appendChild( getGoogleFeed(title, Url));
+		
 }
 function displayCar(catagories,referenceid)
 {
 	var displayHtml = document.getElementById('displayHotel');
 	var carCatagories = catagories;
 	var carReferenceId = referenceid;
-	displayHtml.innerHTML += getCar(carCatagories, carReferenceId);
+	displayHtml.appendChild(getCar(carCatagories, carReferenceId));
 	
 }
 

@@ -1,18 +1,18 @@
 
-.Google-Feed .GoogleFeed-title {
+.google-feed .googlefeed-title {
     height:20px;
     width:500px;
 
 }
 
-    .Google-Feed .GoogleFeed-Url {
+    .google-feed .googlefeed-url {
         
         color:#0026ff;
 
 
     }
 
-    .Google-Feed{
+    .google-feed{
 
     	border:solid #ddd 1px;
         background-color: #FAEFD2;
