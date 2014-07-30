@@ -1,21 +1,29 @@
 
 .google-feed .googlefeed-title {
-    height:20px;
-    width:500px;
+    
+    color:#0026ff;
+    padding-top: 5px;
+    margin-left: 10px;
+    height:15px;    
+
 
 }
 
     .google-feed .googlefeed-url {
         
-        color:#0026ff;
-
+       
+       margin-left: 10px;
 
     }
 
     .google-feed{
 
-    	border:solid #ddd 1px;
-        background-color: #FAEFD2;
+    	/*border:solid #ddd 1px;*/
+        background-color:#C4C4C3;
+        margin-left:2px;
+        margin-right:2px;
+        height:120px;
+        border-radius:5px;
 
     }
     .car {
@@ -26,11 +34,13 @@
 .rssFeed-Header
 {
 
-    font-family:'Comic Sans MS','Times New Roman',Arial,Verdana;
-    font-size:1.2em;
+    font-family:'Times New Roman';
+    font-size:30px;
     background-color:#5e7f98;
     color:#fff;
-    padding-left:5px;
+    padding-left:20px;
+    height:50px;
+    padding-top:15px;
 
 }
 .rssFeed-Welcome
@@ -39,10 +49,32 @@
     color:#8faebb;
     font-size:1em;
     padding-left:5px;
+    height:40px;
+    padding-top:20px;
 
 }
 
-.dropdown-Url {
+.rssFeed-Welcome .dropdown-Url {
 
-    margin-left: 900px;
+    width:300px;
 }
+.rssFeed-Welcome .rssfeed-url {
+    background-color:#395061;
+    color:#8faebb;
+    font-size:1em;
+    padding-left:5px;
+    height:40px;
+    padding-top:20px;
+    margin-left:700px;
+}
+
+.feed-title .news-title {
+    height: 1px;
+    margin-left: 1px;
+    color:#808080;
+}
+
+.feed-title .news-description {
+    margin-left: 1px;
+    height: 1px;
+   }

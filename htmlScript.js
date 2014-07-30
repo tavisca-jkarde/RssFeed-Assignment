@@ -1,4 +1,5 @@
 var  ajaxRequest;
+var displayHtml = document.getElementById('displayHotel');
 
 		function loadXMLDoc(url,functionCall)
 		{
@@ -41,12 +42,17 @@ function responseFunction(response)
 
  	if(selectedIndex==1){
 
- 		var thefeeds=jsonobjList.responseData.feed.entries
+ 	    var thefeeds = jsonobjList.responseData.feed.entries
+ 	    var feedTitle = jsonobjList.responseData.feed.title;
+ 	    var description = jsonobjList.responseData.feed.description;
+
+ 	    displayHtml.appendChild( getTitle(feedTitle, description));
+
  		while(i<thefeeds.length){
 
- 			var  url = thefeeds[i].link;
+ 		    var url = thefeeds[i].contentSnippet;
  			var  title = thefeeds[i].title;
-			displayGoogleFeed(title, url);
+ 			displayGoogleFeed(title, url);
 			i++;
  		}
  	}else if(selectedIndex==2)
@@ -65,8 +71,31 @@ function responseFunction(response)
  	
 }
 
+function getTitle(feedTitle, description)
+{
+    var new_div = document.createElement("div");
+    new_div.className = 'feed-title';
+
+    var sub_childone = document.createElement("h3");
+    sub_childone.className = 'news-title';
+    var news_feed = document.createTextNode(feedTitle);
+    sub_childone.appendChild(news_feed);
+    new_div.appendChild(sub_childone);
+
+    var sub_childtwo = document.createElement("h6");
+    sub_childtwo.className = 'news-description';
+    var news_description = document.createTextNode(description);
+    sub_childtwo.appendChild(news_description);
+    new_div.appendChild(sub_childtwo);
+    return new_div;
+
+
+
+}
+
 function getGoogleFeed(title, imageUrl)
 {
+    
     var new_div = document.createElement("div");
     new_div.className = 'google-feed';
 
@@ -82,6 +111,9 @@ function getGoogleFeed(title, imageUrl)
     sub_childtwo.appendChild(new_content_url);
 
     new_div.appendChild(sub_childtwo);
+
+    
+
     return new_div;
 
 }
@@ -110,16 +142,17 @@ function getCar(catagoriesValue ,referenceidValue)
 
 function displayGoogleFeed(imgTitle, imgURL)
 {
-		var displayHtml = document.getElementById('displayHotel');
+    
+        
 		var title = imgTitle;
 		var Url = imgURL;
-
+        
 		displayHtml.appendChild( getGoogleFeed(title, Url));
 		
 }
 function displayCar(catagories,referenceid)
 {
-	var displayHtml = document.getElementById('displayHotel');
+	//var displayHtml = document.getElementById('displayHotel');
 	var carCatagories = catagories;
 	var carReferenceId = referenceid;
 	displayHtml.appendChild(getCar(carCatagories, carReferenceId));

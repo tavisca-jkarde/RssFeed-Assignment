@@ -8,24 +8,27 @@
 <body  >
 
 
+<div class="container-fluid ">
+    <div class=" rssFeed-Header">
+        Rss Feed Reader 1.0!
+    </div>
 
-<header class="rssFeed-Header">
-Rss Feed Reader 1.0!
-</header>
+    <div class="rssFeed-Welcome">
 
-<div class="rssFeed-Welcome">
-    <label>Welcome to Rss Feed Reader</label>
-    <select class ="dropdown-Url"onchange="" id="url">
+         <label>Welcome to Rss Feed Reader!</label>
+         <label class="rssfeed-url"> Rss Feed Url : </label>  
+         <select class ="dropdown-Url"onchange="" id="url">
             <option  > Select URL</option>
             <option value = "http://googlefeed.appacitive.com/?q=http://timesofindia.feedsportal.com/c/33039/f/533982/index.rss" > Google Feed</option>
             <option value = "http://dev-mystique.tavisca.com/api/Car/categories?token=p0knefax2drdgigftajt4kqn&$filter=Type eq 'car'" > Car</option>
-    
-    </select>
-   <button onclick="selectedValue()" id ="url">GO!</button>
-   <button onclick="refreshPage()" id ="refresh">Refresh</button>
-     
+         </select> 
+         <button onclick="selectedValue()" id ="Button1">GO!</button>
+         <button onclick="refreshPage()" id ="refresh">Refresh</button>  
+
+    </div>
+
 </div>
-    
+   
 <div id ="displayHotel" src=""></div>
 
 
