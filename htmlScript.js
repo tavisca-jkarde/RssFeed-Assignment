@@ -1,6 +1,6 @@
 var  ajaxRequest;
 var displayHtml = document.getElementById('displayHotel');
-
+var colorVAlue = 0;
 		function loadXMLDoc(url,functionCall)
 		{
 			var xmlhttp;
@@ -78,6 +78,8 @@ function getTitle(feedTitle, description)
     new_div.appendChild(sub_childtwo);
 
 
+    
+
     return new_div;
 
 }
@@ -88,8 +90,9 @@ function getGoogleFeed(title, content,date)
     var new_div = document.createElement("div");
     new_div.className = 'google-feed';
 
-    var sub_childone = document.createElement("div");
+    var sub_childone = document.createElement("a");
     sub_childone.className = 'googlefeed-title';
+    sub_childone.href='#'
     var new_content = document.createTextNode(title);
     sub_childone.appendChild(new_content);
     new_div.appendChild(sub_childone);
@@ -105,11 +108,16 @@ function getGoogleFeed(title, content,date)
     var new_content = document.createTextNode(content);
     sub_childtwo.appendChild(new_content);
     new_div.appendChild(sub_childtwo);
+    
+    if (colorVAlue == 0) {
+        new_div.style.backgroundColor = '#E1E0D4';
+        colorVAlue = 1;
+    } else {
+        new_div.style.backgroundColor = '#D1D0D4';
+        colorVAlue = 0;
+    }
 
     
-
-    
-
     return new_div;
 
 }
