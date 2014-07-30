@@ -5,7 +5,7 @@
     padding-top: 5px;
     margin-left: 10px;
     height:15px;    
-
+    font-weight:bold;
 
 }
 
@@ -13,23 +13,23 @@
         
        
        margin-left: 10px;
+       font-weight:bold;
+     color:#808080;
 
     }
 
     .google-feed{
 
-    	/*border:solid #ddd 1px;*/
+    	
         background-color:#C4C4C3;
         margin-left:2px;
         margin-right:2px;
         height:120px;
         border-radius:5px;
+        margin-top:10px;
 
     }
-    .car {
-        background-color: #FAEFD2;
-    	border:solid #ddd 1px;
-    }
+    
 
 .rssFeed-Header
 {
@@ -56,7 +56,7 @@
 
 .rssFeed-Welcome .dropdown-Url {
 
-    width:300px;
+    width:220px;
 }
 .rssFeed-Welcome .rssfeed-url {
     background-color:#395061;
@@ -72,9 +72,20 @@
     height: 1px;
     margin-left: 1px;
     color:#808080;
+    
 }
 
 .feed-title .news-description {
     margin-left: 1px;
     height: 1px;
+     
    }
+
+.google-feed .googlefeed-date {
+
+    text-align:right;
+    font-weight:bold;
+    margin-right:15px;
+    color:#808080;
+        
+}

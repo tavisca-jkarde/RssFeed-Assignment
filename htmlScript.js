@@ -50,24 +50,13 @@ function responseFunction(response)
 
  		while(i<thefeeds.length){
 
- 		    var url = thefeeds[i].contentSnippet;
- 			var  title = thefeeds[i].title;
- 			displayGoogleFeed(title, url);
+ 		    var content = thefeeds[i].contentSnippet;
+ 		    var title = thefeeds[i].title;
+ 		    var date = thefeeds[i].publishedDate;
+ 		    displayGoogleFeed(title, content, date);
 			i++;
  		}
- 	}else if(selectedIndex==2)
- 	{
- 		var  length = jsonobjList.categories.length-1;
-
- 		while(i <= length ){
-
- 			var  catagories = jsonobjList.categories[i];
- 			var  referenceid = jsonobjList.status.referenceId;
-			displayCar(catagories, referenceid);
-			i++;
- 		}
-
- 	} 
+ 	}
  	
 }
 
@@ -87,30 +76,37 @@ function getTitle(feedTitle, description)
     var news_description = document.createTextNode(description);
     sub_childtwo.appendChild(news_description);
     new_div.appendChild(sub_childtwo);
+
+
     return new_div;
-
-
 
 }
 
-function getGoogleFeed(title, imageUrl)
+function getGoogleFeed(title, content,date)
 {
     
     var new_div = document.createElement("div");
     new_div.className = 'google-feed';
 
-    var sub_childone = document.createElement("h4");
+    var sub_childone = document.createElement("div");
     sub_childone.className = 'googlefeed-title';
     var new_content = document.createTextNode(title);
     sub_childone.appendChild(new_content);
     new_div.appendChild(sub_childone);
 
-    var sub_childtwo = document.createElement("h5");
-    sub_childtwo.className = 'googlefeed-url';
-    var new_content_url = document.createTextNode(imageUrl);
-    sub_childtwo.appendChild(new_content_url);
+    var sub_childthree = document.createElement("div");
+    sub_childthree.className = 'googlefeed-date';
+    var new_date = document.createTextNode(date);
+    sub_childthree.appendChild(new_date);
+    new_div.appendChild(sub_childthree);
 
+    var sub_childtwo = document.createElement("div");
+    sub_childtwo.className = 'googlefeed-url';
+    var new_content = document.createTextNode(content);
+    sub_childtwo.appendChild(new_content);
     new_div.appendChild(sub_childtwo);
+
+    
 
     
 
@@ -118,45 +114,17 @@ function getGoogleFeed(title, imageUrl)
 
 }
 
-function getCar(catagoriesValue ,referenceidValue)
-{
-    var new_div = document.createElement("div");
-    new_div.className = 'car';
-
-    var sub_childone = document.createElement("h4");
-    sub_childone.className = 'car-catagories';
-    var new_content = document.createTextNode(catagoriesValue);
-    sub_childone.appendChild(new_content);
-    new_div.appendChild(sub_childone);
-
-    var sub_childtwo = document.createElement("h5");
-    sub_childtwo.className = 'car-Referecne';
-    var new_content_url = document.createTextNode(referenceidValue);
-    sub_childtwo.appendChild(new_content_url);
-
-    new_div.appendChild(sub_childtwo);
-    return new_div;
-}
-
-
-
-function displayGoogleFeed(imgTitle, imgURL)
+function displayGoogleFeed(imgTitle, content ,date)
 {
     
         
 		var title = imgTitle;
-		var Url = imgURL;
+		var contentValue = content;
+		var dateValue = date;
+
         
-		displayHtml.appendChild( getGoogleFeed(title, Url));
+		displayHtml.appendChild(getGoogleFeed(title, contentValue, dateValue));
 		
-}
-function displayCar(catagories,referenceid)
-{
-	//var displayHtml = document.getElementById('displayHotel');
-	var carCatagories = catagories;
-	var carReferenceId = referenceid;
-	displayHtml.appendChild(getCar(carCatagories, carReferenceId));
-	
 }
 
 function refreshPage()
